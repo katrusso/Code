@@ -13,14 +13,11 @@ def capitalize_words(string)
 
 	i = 0
 	while i < words.length 
-		word = words.shift				# pop word off the front of the word array    UNNECESSARY STEPS -- SEE SOLN BELOW
-		letters = word.split("")		# break the word into an array of letters
-		letters[0] = letters[0].upcase	# capitalize the first letter
-		word = letters.join				# rejoin the individual letters into a word
-		words.push(word)				# push the word back onto the word array (at the end)
+		word = words[i]				
+		word[0] = word[0].upcase		
 		i += 1
 	end
-	sentence = words.join(" ")			# rejoin the individual words into a sentence
+	sentence = words.join(" ")			# rejoin the individual words into a sentence and return it
 	return sentence
 end
 
