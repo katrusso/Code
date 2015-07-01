@@ -16,7 +16,7 @@ def is_prime?(number)
 	return false if number <=1
 	i = 2
 	while i<number
-		hasFactor = (number != i && number % i == 0)
+		hasFactor = number % i == 0
 		return false if hasFactor 
 		i += 1
 	end
