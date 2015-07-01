@@ -13,36 +13,15 @@
 # Difficulty: medium.
 
 def is_prime?(number)
-	hasFactor = (number != 2 && number % 2 == 0) || (number != 3 && number % 3 == 0)|| (number !=5 && number % 5 == 0) || (number !=7 && number % 7 == 0)
-	return false if number <= 1 || hasFactor	# ???? is hasFactor evaluated when it is defined (above) or when it is called (left)?
-	return true									# if it's when defined, break this if condition to test for neg number first
-end
-'''
-	possibleFactors = [2, 3, 5, 7]				#ALTERNATE APPROACH
-	possibleFactors.each do |factor|
-		unless number == factor
-			if number % factor == 0 || number <= 1
-				return false
-			end
-		end
+	return false if number <=1
+	i = 2
+	while i<number
+		hasFactor = (number != i && number % i == 0)
+		return false if hasFactor 
+		i += 1
 	end
-	return true
+	return true									
 end
-'''
-'''
-	return false if number <=1					# separating this from the if condition ensures loop won\'t be evaluated needlessly
-	possibleFactors = [2, 3, 5, 7]				#ALTERNATE APPROACH
-	possibleFactors.each do |factor|
-		unless number == factor
-			if number % factor == 0 
-				return false
-			end
-		end
-	end
-	return true
-end
-'''
-
 
 
 # These are tests to check that your code is working. After writing
@@ -53,6 +32,7 @@ puts('is_prime?(3) == true: ' + (is_prime?(3) == true).to_s)
 puts('is_prime?(4) == false: ' + (is_prime?(4) == false).to_s)
 puts('is_prime?(9) == false: ' + (is_prime?(9) == false).to_s)
 puts('is_prime?(-7) == false: ' + (is_prime?(-7) == false).to_s)
+puts('is_prime?(241) == true: ' + (is_prime?(241) == true).to_s)
 
 
 =begin 
