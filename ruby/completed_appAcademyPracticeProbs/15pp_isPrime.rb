@@ -29,6 +29,20 @@ end
 	return true
 end
 '''
+'''
+	return false if number <=1					# separating this from the if condition ensures loop won\'t be evaluated needlessly
+	possibleFactors = [2, 3, 5, 7]				#ALTERNATE APPROACH
+	possibleFactors.each do |factor|
+		unless number == factor
+			if number % factor == 0 
+				return false
+			end
+		end
+	end
+	return true
+end
+'''
+
 
 
 # These are tests to check that your code is working. After writing
