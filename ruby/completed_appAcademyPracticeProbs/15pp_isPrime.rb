@@ -13,7 +13,23 @@
 # Difficulty: medium.
 
 def is_prime?(number)
+	hasFactor = (number != 2 && number % 2 == 0) || (number != 3 && number % 3 == 0)|| (number !=5 && number % 5 == 0) || (number !=7 && number % 7 == 0)
+	return false if number <= 1 || hasFactor	# ???? is hasFactor evaluated when it is defined (above) or when it is called (left)?
+	return true									# if it's when defined, break this if condition to test for neg number first
 end
+'''
+	possibleFactors = [2, 3, 5, 7]				#ALTERNATE APPROACH
+	possibleFactors.each do |factor|
+		unless number == factor
+			if number % factor == 0 || number <= 1
+				return false
+			end
+		end
+	end
+	return true
+end
+'''
+
 
 # These are tests to check that your code is working. After writing
 # your solution, they should all print true.
@@ -22,3 +38,28 @@ puts('is_prime?(2) == true: ' + (is_prime?(2) == true).to_s)
 puts('is_prime?(3) == true: ' + (is_prime?(3) == true).to_s)
 puts('is_prime?(4) == false: ' + (is_prime?(4) == false).to_s)
 puts('is_prime?(9) == false: ' + (is_prime?(9) == false).to_s)
+puts('is_prime?(-7) == false: ' + (is_prime?(-7) == false).to_s)
+
+
+=begin 
+#APP ACADEMY SOLN
+
+def is_prime?(number)
+  if number <= 1
+    # only numbers > 1 can be prime.
+    return false
+  end
+
+  idx = 2
+  while idx < number
+    if (number % idx) == 0
+      return false
+    end
+
+    idx += 1
+  end
+
+  return true
+end
+=end
+
