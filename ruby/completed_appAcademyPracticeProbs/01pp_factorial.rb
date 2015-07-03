@@ -32,6 +32,7 @@ puts(
 
 =begin
 #APP ACADEMY SOLN
+---------------------------------
 def factorial(n)
   if n < 0
     return nil
@@ -46,12 +47,13 @@ def factorial(n)
 
   return result
 end	
+---------------------------------
 =end
 
 
 =begin 
 #MY ORIGINAL SOLN
-
+---------------------------------
 def factorial(n)
   while n != 0 && n > 0
     return n * factorial(n-1)
@@ -60,4 +62,5 @@ def factorial(n)
     return 1
   end
 end
+---------------------------------
 =end
