@@ -4,9 +4,7 @@
 # Difficulty: easy.
 
 def sum_nums(num)
-	while num>0
-		return num + sum_nums(num-1).to_i
-	end
+		return num + sum_nums(num-1).to_i if num > 0
 end
 
 # These are tests to check that your code is working. After writing
@@ -20,6 +18,7 @@ puts('sum_nums(5) == 15: ' + (sum_nums(5) == 15).to_s)
 
 =begin
 #APP ACADEMY SOLN
+---------------------------------
 def sum_nums(num)
   result = 0
 
@@ -31,5 +30,5 @@ def sum_nums(num)
 
   return result
 end
-
+---------------------------------
 =end
