@@ -4,7 +4,7 @@
 # Difficulty: easy.
 
 def sum_nums(num)
-	return num + sum_nums(num-1).to_i if num > 0
+  return num + sum_nums(num-1).to_i if num > 0
 end
 
 # These are tests to check that your code is working. After writing
