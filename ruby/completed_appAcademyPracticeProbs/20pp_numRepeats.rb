@@ -7,22 +7,23 @@
 # Difficulty: hard.
 
 def num_repeats(string)		# already solved during previous problem: used excerpt of code from "17pp_longestPalindrome.rb" and added a counter
-	letterIndicesContainer = Hash.new{|hash, key| hash[key] = []}
-	letters = string.split("")
-	counter=0
+  letterIndicesContainer = Hash.new{|hash, key| hash[key] = []}
+  letters = string.split("")
+  counter = 0
 
-	i=0
-	while i < letters.length 
-		letterIndicesContainer[letters[i]].push i
-		i += 1
+  i = 0
+  while i < letters.length 
+	letterIndicesContainer[letters[i]].push i
+	i += 1
+  end
+
+  letterIndicesContainer.each do |hash, key| 
+	if key.length > 1
+	  counter += 1
 	end
-
-	letterIndicesContainer.each do |hash, key| 
-		if key.length > 1
-	  	  counter += 1
-	  	end
-	  end
-	  	return counter
+  end
+  
+  return counter
 end
 
 # These are tests to check that your code is working. After writing
