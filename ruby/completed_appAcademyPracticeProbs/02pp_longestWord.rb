@@ -7,19 +7,17 @@
 # Difficulty: easy.
 
 def longest_word(sentence)
-	longest = ""
-	words = sentence.split
-
-
-	for word in words	
-		word_length = word.length
-		
-		if word_length > longest.length
-			longest = word
-		end
-	end
-	return longest
+  longest = ""
+  words = sentence.split
+  
+  for word in words 
+    wordLength = word.length  
+    longest = word if wordLength > longest.length 
+  end
+  return longest
 end
+
+
 # These are tests to check that your code is working. After writing
 # your solution, they should all print true.
 
@@ -38,6 +36,7 @@ puts(
 
 =begin
 #APP ACADEMY SOLN
+---------------------------------
 def longest_word(sentence)
   words = sentence.split(" ")
 
@@ -58,5 +57,19 @@ def longest_word(sentence)
 
   return longest_word
 end
-	
+---------------------------------
+=end
+
+
+
+=begin 
+#MY ALTERNATE SOLN (less readable?)
+---------------------------------
+def longest_word(sentence)
+  lw = ""
+  words = sentence.split
+  if lw.length < words[0].length then lw=words.shift else words.shift end until words.empty?
+  return lw
+end
+---------------------------------
 =end
