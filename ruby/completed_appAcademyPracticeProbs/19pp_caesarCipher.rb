@@ -6,11 +6,11 @@
 # When shifting "z" by three letters, wrap around to the front of the
 # alphabet to produce the letter "c".
 #
-# You'll want to use String's `ord` method and Integer's `chr` method.
+# You'll want to use String's `ord` method and Integer's `chr` method.			I do what i want!
 # `ord` converts a letter to an ASCII number code. `chr` converts an
 # ASCII number code to a letter.
 #
-# You may look at the ASCII printable characters chart:
+# You may look at the ASCII printable characters chart: 						(but i'll take it under advisement)
 #
 #     http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters
 #
@@ -18,12 +18,35 @@
 # 'z' having code 122.
 #
 # You may also want to use the `%` modulo operation to handle wrapping
-# of "z" to the front of the alphabet.
+# of "z" to the front of the alphabet.  										(E.G. (index + offset) % 26 )
 #
 # Difficulty: hard. Because this problem relies on outside
 # information, we would not give it to you on the timed challenge. :-)
 
-def caesar_cipher(offset, string)
+def caesar_cipher(offset, string)	# Are arrays pass by ref? I made a fn earlier where shiftedAlphabet = get_shifted_alphabet(offset, alphabet) and alphabet changed too
+  alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+  offsetAlphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+  output = ""
+  caesar = Hash.new()
+  i = j = s = 0
+
+  while i < offset
+  	value = offsetAlphabet.shift()
+	offsetAlphabet.push(value)
+	i += 1
+  end
+
+  while j < 26
+	caesar[alphabet[j]] = offsetAlphabet[j]
+	j += 1
+  end
+
+  while s < string.length
+	letter = string[s]
+	s += 1
+	output = output + (caesar[letter] || " ")
+  end
+  return output
 end
 
 # These are tests to check that your code is working. After writing
@@ -37,3 +60,9 @@ puts(
   'caesar_cipher(3, "abc xyz") == "def abc": ' +
   (caesar_cipher(3, 'abc xyz') == 'def abc').to_s
 )
+
+=begin
+#APP ACADEMY SOLN
+
+
+=end
