@@ -6,12 +6,16 @@
 # Difficulty: easy.
 
 def reverse(string)
-	string = string.split("")
-	output = ""
-	
-	return output = string.pop + reverse(string.join) unless string.empty?
-	return output 
+  string = string.split("")
+  output = ""
+  
+  return output = string.pop + reverse(string.join) unless string.empty?
+  return output 
 end
+
+
+# These are tests to check that your code is working. After writing
+# your solution, they should all print true.
 
 puts( 'reverse("abc") == "cba": ' + (reverse("abc") == "cba").to_s )
 puts( 'reverse("a") == "a": ' + (reverse("a") == "a").to_s )
