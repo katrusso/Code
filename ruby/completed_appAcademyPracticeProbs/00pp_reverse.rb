@@ -24,6 +24,7 @@ puts( 'reverse("") == "": ' + (reverse("") == "").to_s )
 
 =begin
 #APP ACADEMY SOLN
+---------------------------------
 def reverse(string)
   reversed_string = ""
 
@@ -36,13 +37,14 @@ def reverse(string)
 
   return reversed_string
 end
+---------------------------------
 =end
 
 
 
 =begin 
 # MY ORIGINAL SOLN
-
+---------------------------------
 def reverse(string)
 	i = string.length - 1
 	new_string = ""
@@ -53,4 +55,5 @@ def reverse(string)
 	end
 	return new_string
 end
+---------------------------------
 =end
