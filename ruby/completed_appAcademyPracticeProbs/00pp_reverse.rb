@@ -6,14 +6,11 @@
 # Difficulty: easy.
 
 def reverse(string)
-	i = string.length - 1
-	new_string = ""
+	string = string.split("")
+	output = ""
 	
-	while i >= 0 do
-		new_string = new_string + string[i]
-		i-=1
-	end
-	return new_string
+	return output = string.pop + reverse(string.join) unless string.empty?
+	return output 
 end
 
 puts( 'reverse("abc") == "cba": ' + (reverse("abc") == "cba").to_s )
@@ -35,7 +32,21 @@ def reverse(string)
 
   return reversed_string
 end
-	
-
 =end
 
+
+
+=begin 
+# MY ORIGINAL SOLN
+
+def reverse(string)
+	i = string.length - 1
+	new_string = ""
+	
+	while i >= 0 do
+		new_string = new_string + string[i]
+		i-=1
+	end
+	return new_string
+end
+=end
