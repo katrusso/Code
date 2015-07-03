@@ -4,14 +4,11 @@
 # Difficulty: easy.
 
 def time_conversion(minutes)
-	hours = 0
-
-	while minutes >= 60
-		hours += 1
-		minutes -= 60
-	end
-	return "#{hours}:%02.f" % minutes
+	return "#{minutes/60}:%02.f" % (minutes % 60)  # hh:mm
 end
+
+
+
 
 # These are tests to check that your code is working. After writing
 # your solution, they should all print true.
@@ -22,8 +19,7 @@ puts('time_conversion(360) == "6:00": ' + (time_conversion(360) == '6:00').to_s)
 
 =begin
 #APP ACADEMY SOLN
-
-
+---------------------------------
 def time_conversion(minutes)
   hours = 0
 
@@ -40,4 +36,22 @@ def time_conversion(minutes)
 
   return hours.to_s + ":" + minutes_s
 end
+---------------------------------
+=end
+
+
+
+=begin 
+# MY ORIGINAL SOLN
+---------------------------------
+def time_conversion(minutes)
+  hours = 0
+
+  while minutes >= 60
+    hours += 1
+    minutes -= 60
+  end
+  return "#{hours}:%02.f" % minutes
+end
+---------------------------------
 =end
