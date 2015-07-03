@@ -5,15 +5,15 @@
 #
 # Difficulty: easy.
 
+
 def palindrome?(string)
-	letters = string.split("")
-	while letters.length >=2
-		if letters.shift != letters.pop
-			return false
-		end
-	end
-	return true
+  letters = string.split("")
+
+  return false if letters.shift != letters.pop unless letters.length == 1
+  return true if letters.length <= 1 else palindrome?(letters.join) 
 end
+
+
 
 # These are tests to check that your code is working. After writing
 # your solution, they should all print true.
@@ -21,9 +21,11 @@ end
 puts('palindrome?("abc") == false: ' + (palindrome?('abc') == false).to_s)
 puts('palindrome?("abcba") == true: ' + (palindrome?('abcba') == true).to_s)
 puts('palindrome?("z") == true: ' + (palindrome?('z') == true).to_s)
+puts('palindrome?("bb") == true: ' + (palindrome?('bb') == true).to_s)
 
 =begin
 #APP ACADEMY SOLN
+---------------------------------
 def palindrome?(string)
   i = 0
   while i < string.length
@@ -36,4 +38,20 @@ def palindrome?(string)
 
   return true
 end
+---------------------------------
+=end
+
+
+
+=begin 
+#MY ORIGINAL SOLN 
+---------------------------------
+def palindrome?(string)
+  letters = string.split("")
+  while letters.length >=2
+    return false if letters.shift != letters.pop 
+  end
+  return true
+end
+---------------------------------
 =end
