@@ -6,12 +6,8 @@
 # Difficulty: easy.
 
 def factorial(n)
-	while n != 0 && n > 0
-		return n * factorial(n-1)
-	end
-	if n==0
-		return 1
-	end
+  return n * factorial(n-1) unless n <= 0
+	return 1 if n == 0
 end
 
 # These are tests to check that your code is working. After writing
@@ -49,8 +45,19 @@ def factorial(n)
   end
 
   return result
-end
-	
+end	
+=end
 
-	
+
+=begin 
+#MY ORIGINAL SOLN
+
+def factorial(n)
+  while n != 0 && n > 0
+    return n * factorial(n-1)
+  end
+  if n==0
+    return 1
+  end
+end
 =end
