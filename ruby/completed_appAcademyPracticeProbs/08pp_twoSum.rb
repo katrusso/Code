@@ -5,21 +5,20 @@
 # Difficulty: medium.
 
 def two_sum(nums)
-	i = 0
-	j = i + 1
+  i = 0
+  j = i + 1
 
-	while i < nums.length-1
-		while j <nums.length
-			if nums[i] + nums[j] == 0
-				return [i, j]
-			end
-			j += 1
-		end
-		i += 1
-		j = i + 1
-	end
-	return nil
+  while i < nums.length-1
+    while j <nums.length
+      return [i, j] if nums[i] + nums[j] == 0
+      j += 1
+    end
+    i += 1
+    j = i + 1
+  end
+  return nil
 end
+
 
 # These are tests to check that your code is working. After writing
 # your solution, they should all print true.
@@ -33,6 +32,7 @@ puts(
 
 =begin 
 #APP ACADEMY SOLN
+---------------------------------
 def two_sum(nums)
   idx1 = 0
   while idx1 < nums.length
@@ -50,4 +50,27 @@ def two_sum(nums)
 
   return nil
 end
+---------------------------------
+=end
+
+
+
+=begin 
+#A (FAILED) ATTEMPT USING HASHMAPS                #:8:in `[]=': can't add a new key into hash during iteration (RuntimeError)
+---------------------------------
+def two_sum(nums)
+  numbers = Hash.new{|hash, key| hash[key] = []}
+
+    i = 0
+    while i < nums.length
+      numbers[nums[i]]<< i
+      i += 1
+    end
+
+    numbers.each do |hash, key|
+      value = numbers[hash.to_i * -1]
+      puts "[#{key}, #{value}]" if value != nil      
+    end
+end
+---------------------------------
 =end
