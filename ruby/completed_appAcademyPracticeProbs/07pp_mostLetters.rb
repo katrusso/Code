@@ -4,18 +4,15 @@
 #
 # Difficulty: medium.
 
+
 def nearby_az(string)
-	i = 0
-	while i < string.length
-		unless string[i] != "a"
-			if string[i+1] == "z" || string[i + 2] == "z" || string[i+3] == "z"
-				return true
-			end
-		end
-		i += 1
-	end
-	return false
+  (0..string.length-1).each do |i|
+    return true if string[i+1] == "z" || string[i + 2] == "z" || string[i+3] == "z" unless string[i] != "a"
+  end
+  return false
 end
+
+
 
 # These are tests to check that your code is working. After writing
 # your solution, they should all print true.
@@ -27,8 +24,10 @@ puts('nearby_az("a") == false: ' + (nearby_az('a') == false).to_s)
 puts('nearby_az("z") == false: ' + (nearby_az('z') == false).to_s)
 puts('nearby_az("za") == false: ' + (nearby_az('za') == false).to_s)
 
+
 =begin
 #APP ACADEMY SOLN
+---------------------------------
 def nearby_az(string)
   idx1 = 0
   while idx1 < string.length
@@ -51,4 +50,25 @@ def nearby_az(string)
 
   return false
 end
+---------------------------------
+=end
+
+
+
+=begin 
+#MY ORIGINAL SOLN 
+---------------------------------
+def nearby_az(string)
+  i = 0
+  while i < string.length
+    unless string[i] != "a"
+      if string[i+1] == "z" || string[i + 2] == "z" || string[i+3] == "z"
+        return true
+      end
+    end
+    i += 1
+  end
+  return false
+end
+---------------------------------
 =end
