@@ -5,22 +5,22 @@
 # Difficulty: medium.
 
 def get_min_and_max(number1, number2)				 
-	min_max = [number1.abs, number2.abs].minmax				# i took the abs value since the gcf of neg num(s) will be positive, and the while condition (in gcf fn, below)  
-	return min_max[0], min_max[1]							# requires pos numbers; should i rename any of the variables to reflect this?
+  min_max = [number1.abs, number2.abs].minmax				# i took the abs value since the gcf of neg num(s) will be positive, and the while condition (in gcf fn, below)  
+  return min_max[0], min_max[1]							# requires pos numbers; should i rename any of the variables to reflect this?
 end
 
 def greatest_common_factor(number1, number2)
-	smallerNum, largerNum = get_min_and_max(number1,number2)
+  smallerNum, largerNum = get_min_and_max(number1,number2)
 	
-	return number1 if number1 == number2
-	return if smallerNum == 0
-	return smallerNum if largerNum % smallerNum == 0
+  return number1 if number1 == number2
+  return if smallerNum == 0
+  return smallerNum if largerNum % smallerNum == 0
 	
-	i = smallerNum-1
-	while i > 0
-		return i if smallerNum % i == 0 && largerNum % i == 0	
-		i -=1
-	end
+  i = smallerNum-1
+  while i > 0
+    return i if smallerNum % i == 0 && largerNum % i == 0	
+	i -=1
+  end
 end
 	
 # These are tests to check that your code is working. After writing
@@ -51,7 +51,7 @@ puts(
 
 =begin
 #APP ACADEMY SOLN
-
+---------------------------------
 def greatest_common_factor(number1, number2)
   # start i at smaller of number1, number2
   i = nil
@@ -69,6 +69,7 @@ def greatest_common_factor(number1, number2)
     i -= 1
   end
 end
+---------------------------------
 =end
 
 
@@ -77,7 +78,7 @@ end
 
 =begin 
 # MY INITIAL SOLNS:: 
-
+---------------------------------
 def greatest_common_factor(number1, number2)			#ALTERNATE VERSION 2
 	return number1 if number1 == number2
 
@@ -115,4 +116,5 @@ def greatest_common_factor(number1, number2)			#ALTERNATE VERSION 1
 		i -=1
 	end
 end
+---------------------------------
 =end

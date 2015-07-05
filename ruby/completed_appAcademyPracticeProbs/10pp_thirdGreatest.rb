@@ -43,6 +43,7 @@ puts(
 
 =begin
 #APP ACADEMY SOLN
+---------------------------------
 def third_greatest(nums)
   first = nil
   second = nil
@@ -67,5 +68,5 @@ def third_greatest(nums)
 
   return third
 end
-	
+---------------------------------
 =end

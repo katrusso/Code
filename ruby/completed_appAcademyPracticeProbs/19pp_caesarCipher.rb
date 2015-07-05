@@ -32,19 +32,19 @@ def caesar_cipher(offset, string)	# Are arrays pass by ref? I made a fn earlier 
 
   while i < offset
   	value = offsetAlphabet.shift()
-	offsetAlphabet.push(value)
-	i += 1
+	  offsetAlphabet.push(value)
+	  i += 1
   end
 
   while j < 26
-	caesar[alphabet[j]] = offsetAlphabet[j]
-	j += 1
+	  caesar[alphabet[j]] = offsetAlphabet[j]
+	  j += 1
   end
 
   while s < string.length
-	letter = string[s]
-	s += 1
-	output = output + (caesar[letter] || " ")
+	  letter = string[s]
+	  s += 1
+	  output = output + (caesar[letter] || " ")
   end
   return output
 end
@@ -63,7 +63,7 @@ puts(
 
 =begin
 #APP ACADEMY SOLN
-
+---------------------------------
 def caesar_cipher(offset, string)
   words = string.split(" ")
 
@@ -86,4 +86,5 @@ def caesar_cipher(offset, string)
 
   return words.join(" ")
 end
+---------------------------------
 =end

@@ -30,7 +30,7 @@ puts(
 
 =begin
 #APP ACADEMY SOLN
-
+---------------------------------
 def scramble_string(string, positions)
   result = ""
 
@@ -42,5 +42,6 @@ def scramble_string(string, positions)
 
   return result
 end
+---------------------------------
 =end
 
