@@ -8,16 +8,16 @@
 # Difficulty: medium.
 
 def is_power_of_two?(num)
-	binary_num = num.to_s(2) # convert number to binary
-	i = 0
-	count = 0
-	while i < binary_num.length
-		count += 1 if binary_num[i] == "1"	 	
-		return false if count > 1 || count == 0 # if no bits, or more than one bit is on, not a power of two
-		i += 1
-	end
-	return true
+  binary_num = num.to_s(2) # convert number to binary
+  i=count = 0
+  while i < binary_num.length
+	count += 1 if binary_num[i] == "1"	 	
+	return false if count > 1 || count == 0 	# if no bits, or more than one bit is on, not a power of two
+	i += 1
+  end
+  return true
 end
+
 
 # These are tests to check that your code is working. After writing
 # your solution, they should all print true.
