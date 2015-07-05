@@ -21,6 +21,7 @@ def capitalize_words(string)
 	return sentence
 end
 
+
 # These are tests to check that your code is working. After writing
 # your solution, they should all print true.
 
@@ -36,7 +37,7 @@ puts(
 
 =begin 
 #APP ACADEMY SOLN
-
+---------------------------------
 def capitalize_words(string)
   words = string.split(" ")
 
@@ -51,4 +52,5 @@ def capitalize_words(string)
 
   return words.join(" ")
 end
+---------------------------------
 =end

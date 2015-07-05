@@ -37,7 +37,7 @@ puts('is_prime?(241) == true: ' + (is_prime?(241) == true).to_s)
 
 =begin 
 #APP ACADEMY SOLN
-
+---------------------------------
 def is_prime?(number)
   if number <= 1
     # only numbers > 1 can be prime.
@@ -55,5 +55,6 @@ def is_prime?(number)
 
   return true
 end
+---------------------------------
 =end
 

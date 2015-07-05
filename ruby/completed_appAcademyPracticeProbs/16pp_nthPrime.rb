@@ -52,7 +52,7 @@ puts('nth_prime(187) == 1117: ' + (nth_prime(187) == 1117).to_s)
 
 =begin 
 #APP ACADEMY SOLN 
-
+---------------------------------
 def is_prime?(number)
   if number <= 1
     # only numbers > 1 can be prime.
@@ -86,5 +86,5 @@ def nth_prime(n)
     i += 1
   end
 end
-
+---------------------------------
 =end

@@ -77,7 +77,7 @@ puts(
 
 =begin 
 #APP ACADEMY SOLN
-
+---------------------------------
 def palindrome?(string)
   i = 0
   while i < string.length
@@ -112,6 +112,7 @@ def longest_palindrome(string)
 
   return best_palindrome
 end
+---------------------------------
 =end
 
 
@@ -122,7 +123,7 @@ end
 =begin
 # HEAVILY COMMENTED VERSION OF MY CODE FOR PERSONAL REFERENCE(NOT TOTALLY COMFORTABLE WITH HASHMAPS YET AND DON'T WANT TO FORGET WHAT I DID)
 # Obviously not ideal presentation of comments
-
+------------------------------------------------------------------------
 def palindrome?(string) # same fn as 06pp_palindrome.rb file
   letters = string.split("")
   while letters.length >= 2
@@ -177,4 +178,5 @@ def longest_palindrome(string)
   end
   return longestPalindrome
 end
+------------------------------------------------------------------------
 =end

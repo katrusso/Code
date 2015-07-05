@@ -43,7 +43,7 @@ puts(
 
 =begin 
 #APP ACADEMY SOLN
-
+---------------------------------
 def most_common_letter(string)
   most_common_letter = nil
   most_common_letter_count = nil
@@ -71,4 +71,5 @@ def most_common_letter(string)
 
   return [most_common_letter, most_common_letter_count]
 end
+---------------------------------
 =end
