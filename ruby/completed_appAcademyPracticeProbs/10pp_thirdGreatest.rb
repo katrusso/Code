@@ -11,16 +11,13 @@ def third_greatest(nums)
 	second = negativeInfinity
 	third = negativeInfinity
 
-	while nums.length>0
+	while nums.length > 0
 		popped = nums.pop
 
 		if popped > first
-			third = second
-			second = first
-			first = popped
+			third = second; second = first; first = popped
 		elsif popped > second
-			third = second
-			second = popped
+			third = second; second = popped
 		elsif popped > third
 			third = popped
 		end
