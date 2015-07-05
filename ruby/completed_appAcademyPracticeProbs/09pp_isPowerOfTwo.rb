@@ -12,12 +12,8 @@ def is_power_of_two?(num)
 	i = 0
 	count = 0
 	while i < binary_num.length
-		if binary_num[i] == "1"	# 
-			count += 1
-		end
-		if count > 1 || count == 0 # if no bits, or more than one bit is on, not a power of two
-			return false
-		end
+		count += 1 if binary_num[i] == "1"	 	
+		return false if count > 1 || count == 0 # if no bits, or more than one bit is on, not a power of two
 		i += 1
 	end
 	return true
@@ -34,6 +30,7 @@ puts('is_power_of_two?(0) == false: ' + (is_power_of_two?(0) == false).to_s)
 
 =begin
 #APP ACADEMY SOLN
+---------------------------------
 def is_power_of_two?(num)
   if num < 1
     return false
@@ -48,7 +45,6 @@ def is_power_of_two?(num)
       return false
     end
   end
-en	
-
-	
+end
+---------------------------------
 =end
