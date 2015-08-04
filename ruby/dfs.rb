@@ -81,11 +81,23 @@ def dfs_visit(vertices, vertex)
   end
 
 
-  def check_for_node()									# prompts user for a node 
-   puts "Which node are you looking for?"
-   $soughtNode = gets.upcase.to_s
-   dfs
+  def main()									# prompts user for search algorithm and respective node
+    puts "SELECT: "
+    puts "\t 1 dfs"
+    puts "\t 2 bfs"
+    algorithm = gets.to_i
+
+    if algorithm == 1
+      puts "Which node are you looking for?" 
+      $soughtNode = gets.upcase.to_s
+      dfs
+    end
+
+    if algorithm == 2
+      puts "Sorry, this functionality isn't built yet"
+    end
+   
    puts "Node not found"
   end
 
-  check_for_node
+  main
