@@ -16,7 +16,7 @@ $time = 0
 def readInGraph()
   vertices = Hash.new
   graphEdges = [
-  	"AB",
+    "AB",
     "AC",
     "BD",
     "BE",
@@ -27,15 +27,14 @@ def readInGraph()
 
   graphEdges.each do |edge|
     unless vertices[edge[0]]
-	  vertices[edge[0]] = Vertex.new() 			# the value of each vertex (key) in the hash is a vector which holds the attributes of that vertex (color, timestamps, etc)
-	end
-	
-	vertices[edge[0]].adjacent.push edge[1]	
-	vertices[edge[1]] = Vertex.new 				# adj vertices are added to the vertices hash here incase they don't have any adjacent graphEdges of their own
+      vertices[edge[0]] = Vertex.new()      # the value of each vertex (key) in the hash is a vector which holds the attributes of that vertex (color, timestamps, etc)
+    end
+  
+    vertices[edge[0]].adjacent.push edge[1] 
+    vertices[edge[1]] = Vertex.new        # adj vertices are added to the vertices hash here incase they don't have any adjacent graphEdges of their own
   end
   return vertices
 end
-
 
 
 def dfs(soughtNode) 
@@ -43,17 +42,17 @@ def dfs(soughtNode)
 
   vertices.each do |vertex, data|
     if vertices[vertex].color == 'white'
-	  dfs_visit(vertices, vertex, soughtNode) 
-	end
+      dfs_visit(vertices, vertex, soughtNode) 
+    end
   end
-  vertices.each {|vertex, data| puts "#{vertex}: #{data}"} 			# prints out all the vertex info
+  vertices.each {|vertex, data| puts "#{vertex}: #{data}"}      # prints out all the vertex info
 end
 
 
 def dfs_visit(vertices, vertex, soughtNode)
   $time += 1 
   vertices[vertex].discoveredTimestamp = $time
-  vertices[vertex].color = 'gray' 								# node has been discovered
+  vertices[vertex].color = 'gray'                 # node has been discovered
   
   puts "soughtNode: #{soughtNode}"
   puts "vertex: #{vertex}"
@@ -63,23 +62,20 @@ def dfs_visit(vertices, vertex, soughtNode)
     exit true
   end
   
-
-
   vertices[vertex].adjacent.each do |adjNode|
     if vertices[adjNode].color == 'white'
-	    vertices[adjNode].previousNode = vertex
-	    dfs_visit(vertices, adjNode, soughtNode)
-	  end
+      vertices[adjNode].previousNode = vertex
+      dfs_visit(vertices, adjNode, soughtNode)
+    end
   end
-
-  vertices[vertex].color = 'black'							# node has no unvisited adjacent nodes
+  
+  vertices[vertex].color = 'black'              # node has no unvisited adjacent nodes
   $time += 1
   vertices[vertex].finishedTimestamp = $time
 end
 
 
-
-  def main()									# prompts user for search algorithm and respective node
+  def main()                  # prompts user for search algorithm and respective node
     puts "SELECT: "
     puts "\t 1 dfs"
     puts "\t 2 bfs"
