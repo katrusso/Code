@@ -13,7 +13,6 @@ end
 
 
 $time = 0
-$soughtNode
 def readInGraph()
   vertices = Hash.new
   graphEdges = [
@@ -39,46 +38,45 @@ end
 
 
 
-def dfs() 
+def dfs(soughtNode) 
   vertices = readInGraph()
 
   vertices.each do |vertex, data|
     if vertices[vertex].color == 'white'
-	  dfs_visit(vertices, vertex) 
+	  dfs_visit(vertices, vertex, soughtNode) 
 	end
   end
   vertices.each {|vertex, data| puts "#{vertex}: #{data}"} 			# prints out all the vertex info
 end
 
 
-def dfs_visit(vertices, vertex)
+def dfs_visit(vertices, vertex, soughtNode)
   $time += 1 
   vertices[vertex].discoveredTimestamp = $time
   vertices[vertex].color = 'gray' 								# node has been discovered
   
-  puts "soughtNode: #{$soughtNode}"
+  puts "soughtNode: #{soughtNode}"
   puts "vertex: #{vertex}"
-  																#puts "vertex class: #{vertex.class}"
-  																#puts "soughtNode class: #{$soughtNode.class}"
- 
-  #if vertices[$soughtNode.to_s].color == 'gray'   ####### BUG! both vertex and soughtNode vars are String class yet substitution doesn't work###########
-  if vertices['G'].color == 'gray'				   ###### NOT SURE HOW TO SEPARATE THIS BEHAVIOR INTO ITS OWN FUNCTION #############
-    puts $soughtNode
+  puts "color: #{vertices['D'].color}"
+  if vertices['D'].color.to_s.eql? "gray"         ###  BUG  ### can't substitute letter with soughtNode variable
+    puts soughtNode                               
     exit true
   end
- 
+  
+
 
   vertices[vertex].adjacent.each do |adjNode|
     if vertices[adjNode].color == 'white'
-	  vertices[adjNode].previousNode = vertex
-	  dfs_visit(vertices, adjNode)
-	end
+	    vertices[adjNode].previousNode = vertex
+	    dfs_visit(vertices, adjNode, soughtNode)
+	  end
   end
 
   vertices[vertex].color = 'black'							# node has no unvisited adjacent nodes
   $time += 1
   vertices[vertex].finishedTimestamp = $time
-  end
+end
+
 
 
   def main()									# prompts user for search algorithm and respective node
@@ -87,17 +85,11 @@ def dfs_visit(vertices, vertex)
     puts "\t 2 bfs"
     algorithm = gets.to_i
 
-    if algorithm == 1
-      puts "Which node are you looking for?" 
-      $soughtNode = gets.upcase.to_s
-      dfs
-    end
+    puts "Enter the sought node (for dfs) or source node (for bfs)"
+    node = gets.upcase.to_s
 
-    if algorithm == 2
-      puts "Sorry, this functionality isn't built yet"
-    end
-   
-   puts "Node not found"
+    dfs(node) if algorithm == 1
+    puts "Sorry, this functionality isn't built yet" if algorithm == 2
   end
 
   main
