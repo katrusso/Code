@@ -57,6 +57,13 @@ def dfs_visit(vertices, vertex, soughtNode)
   puts "soughtNode: #{soughtNode}"
   puts "vertex: #{vertex}"
   puts "color: #{vertices['D'].color}"
+  
+  #spaceship_method_color = vertices['D'].color <=> "gray" 
+  #puts "spaceship_method_color:: #{spaceship_method_color}"
+  
+  spaceship_method_name = "D" <=> soughtNode.to_s       ### NOT READ AS EQUIVALENT EVEN THOUGH THEY ARE BOTH STRING CLASS ###
+  puts "spaceship_method_name:: #{spaceship_method_name}"
+  
   if vertices['D'].color.to_s.eql? "gray"         ###  BUG  ### can't substitute letter with soughtNode variable
     puts soughtNode                               
     exit true
