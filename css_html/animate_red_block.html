@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div {
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: relative;
+    
+    /*animation: name duration timing-function delay iteration-count direction fill-mode play-state; */
+    -webkit-animation: mymove 5s infinite ease-in-out; /* Chrome, Safari, Opera */
+    -webkit-animation-direction: alternate; /* Chrome, Safari, Opera */
+	
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove {
+    from {left: 0px;}
+    to {left: 500px;}
+}
+
+</style>
+</head>
+<body>
+
+<p><strong>Note:</strong> The animation property is not supported in Internet Explorer 9 and earlier versions.</p>
+<div></div>
+
+</body>
+</html>

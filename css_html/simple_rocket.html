@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+	
+	  #outerspace {
+	    position: relative;
+	    height: 400px;
+	    background: #0c0440 url(outerspace.jpg);
+	    color: #fff;
+	  }
+	  div.rocket {
+	    position: absolute;
+	    bottom: 10px;
+	    left: 20px;
+	    -webkit-transition: 3s ease-in;
+	   
+	  }
+	  div.rocket div {
+	    width: 92px;
+	    height: 215px;
+	    background: url(rocket.gif) no-repeat;
+	    -webkit-transition: 2s ease-in-out;
+	  }
+	
+	  #outerspace:hover div.rocket {
+	    -webkit-transform: translate(540px,-200px);
+	  }
+	  #outerspace:hover div.rocket div {
+	    -webkit-transform: rotate(70deg);
+	    
+	  }
+	
+	</style>
+</head>
+
+<body>
+	<div id="outerspace">
+		<div class="rocket">
+			<div><!-- rocket --></div>
+		</div>
+	</div>
+</body>
+</html>
