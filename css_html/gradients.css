@@ -1,0 +1,121 @@
+p{
+	color: red;
+	font-weight: bold;
+	margin-left: 110px;
+}
+
+div#one{
+	width: 100px;
+	height: 100px;
+  	background: -webkit-linear-gradient(red, blue); /* For Safari 5.1 to 6.0 */
+  	padding: 20px;
+  	background-clip: content-box;
+  	
+}
+
+div#two{
+	width: 100px;
+	height: 100px;
+  	background: -webkit-linear-gradient(left, red , blue); /* For Safari 5.1 to 6.0 */
+  	padding: 20px;
+  	background-clip: content-box;
+}
+
+div#three{
+	width: 100px;
+	height: 100px;
+  	background: -webkit-linear-gradient(left top, red , blue); /* For Safari 5.1 to 6.0 */
+  	padding: 20px;
+  	background-clip: content-box;
+}
+
+
+div#four{
+	width: 100px;
+	height: 100px;
+    background: -webkit-linear-gradient(60deg, red, blue); /* For Safari 5.1 to 6.0 */
+  	padding: 20px;
+  	background-clip: content-box;
+}
+
+div#five{
+	width: 100px;
+	height: 100px;
+    background: -webkit-linear-gradient(red, green, blue); /* For Safari 5.1 to 6.0 */
+  	padding: 20px;
+  	background-clip: content-box;
+}
+
+div#six{
+	width: 100px;
+	height: 100px;
+  background: -webkit-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);
+  	padding: 20px;
+  	background-clip: content-box;
+}
+
+div#seven{
+	width: 100px;
+	height: 100px;
+    background: -webkit-linear-gradient(left,rgba(255,0,0,0),rgba(255,0,0,1)); /*Safari 5.1-6*/
+  	padding: 20px;
+  	background-clip: content-box;
+}
+
+div#eight{
+	width: 100px;
+	height: 100px;
+  background: -webkit-repeating-linear-gradient(red, yellow 10%, green 20%);
+  	padding: 20px;
+  	background-clip: content-box;
+}
+
+div#nine{
+	width: 100px;
+	height: 100px;
+    background: -webkit-radial-gradient(red, green, blue); /* Safari 5.1 to 6.0 */
+  	position:  relative;
+  	padding: 20px;
+  	background-clip: content-box;
+}
+
+div#ten{
+	width: 100px;
+	height: 100px;
+    background: -webkit-radial-gradient(red 5%, green 15%, blue 60%); /* Safari 5.1-6.0 */
+  	padding: 20px;
+  	background-clip: content-box;
+}
+
+div#eleven{
+	width: 100px;
+	height: 100px;
+    background: -webkit-radial-gradient(circle, red, yellow, green); /* Safari */
+  	position:  relative;
+  	padding: 20px;
+  	background-clip: content-box;
+}
+
+div#twelve{
+	width: 100px;
+	height: 100px;
+    background: -webkit-radial-gradient(60% 55%, closest-side,blue,green,yellow,black); 
+  	padding: 20px;
+  	background-clip: content-box;
+}
+
+div#thirteen{
+	width: 100px;
+	height: 100px;
+    background: -webkit-radial-gradient(60% 55%, farthest-side,blue,green,yellow,black);
+  	padding: 20px;
+  	background-clip: content-box;
+}
+
+div#fourteen{
+	width: 100px;
+	height: 100px;
+    background: -webkit-repeating-radial-gradient(red, yellow 10%, green 15%);
+  	padding: 20px;
+  	background-clip: content-box;
+}

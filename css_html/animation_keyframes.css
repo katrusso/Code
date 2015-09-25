@@ -1,0 +1,45 @@
+#block{
+	width:  100px;
+	height:  100px;
+	background: orange;
+	position:  relative;
+	
+	-webkit-animation: slide_horizontal 5s infinite ease-in-out alternate;
+	    -webkit-animation-play-state: running; /* paused */
+	
+}
+
+@-webkit-keyframes slide_horizontal {
+	from {left: 0px;}
+	to {left:  500px;}
+}
+
+p#lev_text{
+	border-radius: 25px;
+	border: 1px solid black;
+	width: 100px;
+	padding: 20px;
+	position: relative;
+	
+	-webkit-animation: slide_vertical 3s infinite ease-in alternate;
+}
+
+@-webkit-keyframes slide_vertical {
+	from{top: 0px;}
+	to{top: -50px;}
+}
+
+p#color_changer{
+	border: 1px solid black;
+	width: 100px;
+	padding: 20px;
+	position: absolute;
+	
+	-webkit-animation: animate_color 10s infinite ease-in alternate-reverse;
+}
+
+@-webkit-keyframes animate_color {
+	0%   {background-color: red;}
+	25%  {background-color: yellow;}
+	50%  {background-color: blue;}
+	100% {background-color: green;}
