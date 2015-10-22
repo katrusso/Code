@@ -1,0 +1,56 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 21, 2015, 8:02:52 PM
+    Author     : hq
+*/
+
+//the bg img is applied to the .root style, which means it's applied to the root node of the Scene instance
+//in this case the root node is named "grid" in Login.java
+.root {
+    -fx-background-image: url("background.jpg");
+}
+
+//affects all labels in the form
+//alters font size/weight and adds a drop shadow of gray color #333333.
+//the purpose of the drop shadow is to add contrast btwn the dark gray text and the light gray bg.
+.label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.5), 0,0,0,1);
+}
+
+#welcome-text {
+    -fx-font-size: 32px;
+    -fx-font-family: "Arial Black";
+    -fx-fill: #818181; //dark gray
+    -fx-effect: innershadow( three-pass-box, rgba(0,0,0.7), 6, 0.0, 0,2); //innershadow: embossing effect
+    //you can apply an inner shadow to any color by changing the text fill color to be a darker version of the bg.
+}
+#actiontarget {
+    -fx-fill: FIREBRICK;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.5), 0, 0, 0, 1);
+}
+
+//style the button, making it change when the user hovers the mouse over it
+//this change gives users an indication the button is interactive (a standard design practice)
+//first, create the style for the initial state of the button
+.button {
+    -fx-text-fill: white;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#61a2b1, #2a5058);
+    -fx-effect: dropshadow( three-pass-box, rgba(0,0,0,0.6), 5, 0.0, 0, 1);
+}
+
+//now create a slightly different look for when the user hovers the mouse over the button
+//use the hover pseudo-class.
+//a pseudo-class includes the selector for the class and the name for the state separated by a colon
+.button:hover {
+    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+}
