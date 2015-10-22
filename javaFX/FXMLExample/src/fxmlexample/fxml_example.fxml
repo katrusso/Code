@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?language javascript?> <!--using JS to create the event handler rather than java code-->
+
+<?import java.net.*?>
+<?import javafx.geometry.*?> 
+<?import javafx.scene.control.*?>  
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+ 
+<!-- 
+<GridPane fx:controller="fxmlexample.FXMLExampleController" 
+    xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10"> 
+    styleClass="root">
+<padding><Insets top="25" right="25" bottom="10" left="25"/></padding>  
+-->
+
+<GridPane xmlns:fx="http://javafx.com/fxml" 
+          alignment="center" hgap="10" vgap="10"> 
+    <fx:script>
+        function handleSubmitButtonAction(){
+            actiontarget.setText("Sign in button pressed, JS");
+        }
+    </fx:script>
+<padding><Insets top="25" right="25" bottom="10" left="25"/></padding>  
+
+
+<gridLinesVisible>false</gridLinesVisible>
+<!--
+    - creates a Text object and sets its text value to Welcome. 
+    - colIndex and rowIndex attributes correspond to the placement of the Text in the grid
+    - colSpan is set to 2, making the Welcome title span 2 columns in the grid.
+-->
+<!-- Replaced by CSS style sheet id #welcome-text
+<Text text="Welcome"
+    GridPane.columnIndex="0" GridPane.rowIndex="0"
+    GridPane.columnSpan="2"/>
+-->
+
+<!-- create a welcome-text ID for the Welcome Text object so it uses the style 
+    #welcome-text defined in the CSS file.
+-->
+<Text id="welcome-text" text="Welcome"
+    GridPane.columnIndex="0" GridPane.rowIndex="0"
+    GridPane.columnSpan="2"/>  
+
+<Label text = "User Name:"
+    GridPane.columnIndex="0" GridPane.rowIndex="1"/> 
+
+<TextField 
+    GridPane.columnIndex="1" GridPane.rowIndex="1"/>    
+
+<Label text="Password:"
+GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+
+<PasswordField fx:id="passwordField"
+    GridPane.columnIndex="1" GridPane.rowIndex="2"/>  
+
+<!-- 
+Button control is for submitting data.
+Text control is for displaying a message when the user presses the button.
+
+HBox pane is needed to set an alignment for the button that is different  from
+the default alignment applied to the other controls in the GridPane layout.    
+
+The HBox pane has 1 child, a Button with text property set to Sign In and 
+    an onAction property set to handleSubmitButtonAction(). You implement this 
+    latter behavior in java code.
+-->
+<HBox spacing="10" alignment="BOTTOM_RIGHT" 
+    GridPane.columnIndex="1" GridPane.rowIndex="4">
+    <Button text="Sign In"
+    onAction="handleSubmitButtonAction(event);"/>
+</HBox>
+
+<!-- onAction="#handleSubmitButtonAction"/> -->
+
+
+<!--
+Assigning an fx:id value to an element creates a variable in the doc's namespace, 
+which you can refer to from elsewhere in the code. While not required, defining
+a controller field helps clarify how the controller and markup are associated.
+-->
+<Text fx:id="actiontarget"
+    GridPane.columnIndex="1" GridPane.rowIndex="6"/>  
+ 
+
+<!--
+ - add the style sheet
+ - the @ symbol before the name of the style sheet in the URL indicates
+that the style sheet is in the same directory as the FXML file
+-->
+<stylesheets>
+    <URL value="@Login.css"/>
+</stylesheets>  
+
+</GridPane>    
+
+<!--
+http://docs.oracle.com/javafx/2/get_started/fxml_tutorial.htm
+
+JavaFX FXML, which is an XML-based language, provides the structure for 
+building a user interface separate from the application logic of your code.
+
+the GridPane layout is the root element of the FXML doc and has two attributes: 
+1. The fx:controller attribute is required when you specify controller-based event 
+handlers in your markup. 
+
+2. The xmlns:fx attribute is always required and specifies the fx namespace.
+
+The remainder of the code controls the alignment and spacing of the grid pane.
+As the window is resized, the nodes within the grid pane are resized 
+according to their layout constraints. 
+
+-->
