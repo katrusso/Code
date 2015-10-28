@@ -50,3 +50,31 @@ class Box2 {
 		rect.printBox();
 	}
 }
+
+/*
+	Constructors let you set initial values of instance vars, call methods based on those vars, call methods on other objects, 
+	and set the initial properties of an object.
+
+	Constructors ALWAYS have the same name as the class.
+	They DO NOT have a return type.
+	They CANNOT return a value in the method by using the return statement.
+
+	If you have a constructor method that duplicates the behavior of an existing constructor you can call the first 
+	constructor from inside the body of the second constructor:
+
+	e.g. 
+
+	class Circle {
+		int x, y, radius;
+
+		Circle(int xPoint, int yPoint, int radiusLength){
+			this.x = xPoint;
+			this.y = yPoint;
+			this.radius = radiusLength;
+		}
+
+		Circle (int xPoint, int yPoint){
+			this(xPoint, yPoint, 1);
+		}
+	}
+*/
