@@ -3,7 +3,7 @@ import java.io.*; //contains IOExceptions (Stream exceptions)
 public class ByteReader {
 	public static void main(String[] args) {
 		try {
-			FileInputStream file = new FileInputStream("class.dat");
+			FileInputStream file = new FileInputStream("./class.txt");
 			boolean eof = false;
 			int count = 0;
 			while (!eof) {
@@ -15,7 +15,7 @@ public class ByteReader {
 						count++;
 			}
 			file.close();
-			System.out.prinln("\n Bytes read: " + count);
+			System.out.println("\n Bytes read: " + count);
 		} catch (IOException e) {
 			System.out.println(("Error -- " + e.toString()));
 		}
