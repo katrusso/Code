@@ -30,3 +30,9 @@
 
 # Debug files
 *.dSYM/
+/javaFX/FX_CSS_Project/nbproject/private/
+/javaFX/FX_CSS_Project/dist/
+/javaFX/FX_CSS_Project/build/
+/javaFX/ObserverDesignPattern_JavaFX_CSS_Project/nbproject/private/
+/javaFX/ObserverDesignPattern_JavaFX_CSS_Project/build/
+/javaFX/ObserverDesignPattern_JavaFX_CSS_Project/dist/
