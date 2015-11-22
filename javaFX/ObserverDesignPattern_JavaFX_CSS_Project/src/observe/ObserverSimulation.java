@@ -76,24 +76,15 @@ public class ObserverSimulation extends Application {
         
         Button btn = new Button("Update");
         HBox hbBtn = new HBox(10);
-        //hbBtn.setAlignment(Pos.BOTTOM_RIGHT); //sets an alignment for the button that is different from the alignment applied to other controls in the grid pane.
         hbBtn.getChildren().add(btn);//button is added to the child of the HBox pane
         grid.add(hbBtn, 1, 4); //the HBox pane is added to the grid in col 1, row 4
         
         Button registerObs1 = new Button("Unregister Obs 1");
-        //HBox registerObs1_hbBtn = new HBox(10);
-        //hbBtn.setAlignment(Pos.TOP_RIGHT); //sets an alignment for the button that is different from the alignment applied to other controls in the grid pane.
-        //hbBtn.getChildren().add(registerObs1);//button is added to the child of the HBox pane
-        //grid.add(registerObs1_hbBtn, 12, 0); //the HBox pane is added to the grid in col 1, row 4
-        grid.add(registerObs1, 12, 0); //the HBox pane is added to the grid in col 1, row 4
+        grid.add(registerObs1, 12, 0); 
 
         
         Button registerObs2 = new Button("Unregister Obs 2");
-        //HBox registerObs2_hbBtn = new HBox(10);
-        //hbBtn.setAlignment(Pos.BOTTOM_RIGHT); //sets an alignment for the button that is different from the alignment applied to other controls in the grid pane.
-        //hbBtn.getChildren().add(registerObs2);//button is added to the child of the HBox pane
-        //grid.add(registerObs2_hbBtn, 12, 6); //the HBox pane is added to the grid in col 1, row 4
-        grid.add(registerObs2, 12, 6); //the HBox pane is added to the grid in col 1, row 4
+        grid.add(registerObs2, 12, 6); 
 
         
         final Text actiontarget = new Text(); //Text control for displaying a message once the button is pressed.
@@ -162,17 +153,6 @@ public class ObserverSimulation extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       // ValueData vd = new ValueData();
-        //ObsDisplay obs1 = new ObsDisplay(vd);
-        //ObsDisplay obs2 = new ObsDisplay(vd);
-
-       // vd.setData("55");
-        //vd.setData("44");
-
-
-//        vd.removeObserver(obs2);
-        
-  //      vd.setData("33");
         launch(args);
     }
     
