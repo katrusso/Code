@@ -5,7 +5,6 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -31,7 +30,6 @@ public class ObserverSimulation extends Application {
         primaryStage.setTitle("Observer Design Pattern");
         
         GridPane grid = new GridPane(); //enables you to create a flexible grid where you can put controls 
-        //grid.setAlignment(Pos.CENTER); //changes default grid position from top left to center
         grid.setHgap(10); //manages the spacing between rows and columns
         grid.setVgap(10); 
         grid.setPadding(new Insets(25, 25, 25, 25)); //manages the space around the edges of the grid pane; insets order: top, rt, btm, left   
