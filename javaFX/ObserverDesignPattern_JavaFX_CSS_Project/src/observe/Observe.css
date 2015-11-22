@@ -18,7 +18,7 @@ and open the template in the editor.
 //alters font size/weight and adds a drop shadow of gray color #333333.
 //the purpose of the drop shadow is to add contrast btwn the dark gray text and the light gray bg.
 .label {
-    -fx-font-size: 12px;
+    -fx-font-size: 18px;
     -fx-font-weight: bold;
     -fx-text-fill: #333333;
     -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.5), 0,0,0,1);
