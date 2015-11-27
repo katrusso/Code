@@ -53,14 +53,16 @@ public class FXMLDocumentController implements Initializable {
     private Label obs1LabelField;
     @FXML
     private Label obs2LabelField;
-    @FXML
-    private Label gridLabel;
     
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        vd = new ValueData();
-        obs1 = new ObsDisplay(vd);
-        obs2 = new ObsDisplay(vd);
+    public void initialize(URL location, ResourceBundle resources) {
+        //
+    }
+
+    public void initialize(ValueData vd, ObsDisplay obs1, ObsDisplay obs2) {
+        this.vd = vd;
+        this.obs1 = obs1;
+        this.obs2 = obs2;
     }    
 
 
