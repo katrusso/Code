@@ -13,11 +13,11 @@
     <GridPane gridLinesVisible="false" layoutX="14.0" layoutY="30.0" prefHeight="225.5" prefWidth="700.0">
       <children>
         <Label fx:id="subjectLabel" minHeight="16.0" minWidth="69.0" text="Subject" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-        <Label fx:id = "obs1Label" text="Observer 1" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
-        <Label fx:id = "obs2Label" text="Observer 2" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-        <Label fx:id = "subjectLabelField" text="Value:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-        <Label fx:id = "obs1LabelField" text="Value:" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-        <Label fx:id = "obs2LabelField" text="Value:" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+        <Label fx:id="obs1Label" text="Observer 1" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+        <Label fx:id="obs2Label" text="Observer 2" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+        <Label fx:id="subjectLabelField" text="Value:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <Label fx:id="obs1LabelField" text="Value:" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+        <Label fx:id="obs2LabelField" text="Value:" GridPane.columnIndex="3" GridPane.rowIndex="4" />
         <TextField fx:id="subjectValue" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
         <Label fx:id="obs1Value" text="" GridPane.columnIndex="4" GridPane.rowIndex="1" />
         <Label fx:id="obs2Value" text="" GridPane.columnIndex="4" GridPane.rowIndex="4" />
@@ -43,6 +43,7 @@
         <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
       </rowConstraints>
     </GridPane>
+    <Label fx:id="gridLabel" layoutX="19.0" layoutY="309.0" text="Label" />
   </children>
   <stylesheets>
     <URL value="@ObserverSim.css" />
