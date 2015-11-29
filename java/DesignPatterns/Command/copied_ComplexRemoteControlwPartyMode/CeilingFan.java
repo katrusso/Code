@@ -1,4 +1,3 @@
-package headfirst.command.party;
 
 public class CeilingFan {
 	public static final int HIGH = 3;

@@ -1,4 +1,3 @@
-package headfirst.command.party;
 
 import java.util.*;
 

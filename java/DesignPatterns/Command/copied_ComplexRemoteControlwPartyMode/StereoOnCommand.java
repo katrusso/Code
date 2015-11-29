@@ -1,4 +1,3 @@
-package headfirst.command.party;
 
 public class StereoOnCommand implements Command {
 	Stereo stereo;

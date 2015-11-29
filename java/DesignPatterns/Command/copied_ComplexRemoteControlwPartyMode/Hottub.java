@@ -1,4 +1,3 @@
-package headfirst.command.party;
 
 public class Hottub {
 	boolean on;
