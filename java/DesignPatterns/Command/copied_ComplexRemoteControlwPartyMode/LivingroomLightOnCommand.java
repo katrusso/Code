@@ -1,4 +1,3 @@
-package headfirst.command.party;
 
 public class LivingroomLightOnCommand implements Command {
 	Light light;

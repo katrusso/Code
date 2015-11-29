@@ -1,4 +1,3 @@
-package headfirst.command.party;
 
 public class HottubOffCommand implements Command {
 	Hottub hottub;

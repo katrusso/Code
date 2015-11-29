@@ -1,4 +1,3 @@
-package headfirst.command.party;
 
 public class CeilingFanOffCommand implements Command {
 	CeilingFan ceilingFan;

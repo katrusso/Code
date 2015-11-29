@@ -1,4 +1,3 @@
-package headfirst.command.party;
 
 public class MacroCommand implements Command {
 	Command[] commands;

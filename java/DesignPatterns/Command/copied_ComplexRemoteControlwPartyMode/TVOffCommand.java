@@ -1,4 +1,3 @@
-package headfirst.command.party;
 
 public class TVOffCommand implements Command {
 	TV tv;
