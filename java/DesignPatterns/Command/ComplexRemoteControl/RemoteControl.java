@@ -37,3 +37,21 @@ public class RemoteControl {
 		return stringBuff.toString();
 	}
 }
+
+/*
+	The NoCommand object is an example of a null object. 
+	A null object is useful when you don't have a meaningful object to return and yet you want to remove 
+	the responsibility for handling null from the client.
+
+	For the remote control, we don't have a meaningful object to assign to each slot so we provided a 
+	NoCommand object that acts as a surrogate and does nothing when its execute method is called.
+
+	Otherwise, we could have checked to see if a command was loaded every time we referenced a slot:
+	
+	e.g. 
+
+	public void onButtonWasPushed(int slot){
+		if (onCommands[slot] != null)
+			onCommands[slot].execute();
+	}
+*/ 
