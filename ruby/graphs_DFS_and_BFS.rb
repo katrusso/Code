@@ -236,9 +236,8 @@ end
 
 
 # =========================================================================================================
-# BFS VERSION STARTED ON SKYPE WITH DAVE
-# NOT FUNCTIONAL :(
-# STUMBLING WITH HOW TO ACCESS TREE NODES
+# BFS
+# NOT FUNCTIONAL
 
 class Node
   attr_reader :name, :children
@@ -300,7 +299,7 @@ end
 end
 
 # =========================================================================================================
-main
+
 
 
 
