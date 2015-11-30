@@ -1,0 +1,36 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 Command Design Pattern - Additional Uses:\
+\
+1. Job Queue\
+Limit computations to a fixed number of threads by adding the command objects (receiver + actions) to a queue, and have a set number of threads perform the following actions:\
+	 - remove() to remove the command from the queue\
+ 	- call the command\'92s execute() method\
+	- wait for the call to finish\
+ 	- discard the command object and retrieve a new one.\
+\
+- as long as you put objects into the queue that implement the Command Pattern, your execute() method will be invoked when a thread is available. \
+\
+ - consider making the queue a vector so, if needed, you can reorder the command objects should priorities in the queue change.\
+\
+2. Failure Recovery via logging\
+- enables your app to recover after a crash by logging all the commands, reloading them, then re-invoking them in order. To do so, you need to add two methods to the Command interface, store() and load():\
+	public interface Command \{\
+		execute() \
+		undo() 	// if you choose to use it\
+		store () \
+		load() \
+	\}\
+\
+ - As we execute commands, store a history of them on disk. When a crash occurs, reload the command objects and invoke their execute() methods in batch and in order.\
+\
+- useful for apps that invoke actions on large data structures that can\'92t quickly be saved each time a change is made.\
+\
+e.g. a spreadsheet application\
+Implement failure recovery by logging the actions rather than writing a copy of the spreadsheet to disk every time a change is made. \
+\
+ - these techniques can be extended to apply to sets of operations in a transactional manner so that all of the operations complete or none of them do. (\'93All or nothing\'94)}
