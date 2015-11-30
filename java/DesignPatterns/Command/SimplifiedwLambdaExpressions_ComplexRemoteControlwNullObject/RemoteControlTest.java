@@ -8,7 +8,7 @@ public class RemoteControlTest {
 		public static final int STEREO = 4;
 
 	public static void main(String[] args) {
-		
+
 		//create the invoker
 		RemoteControl remote = new RemoteControl();
 
@@ -19,14 +19,23 @@ public class RemoteControlTest {
 		GarageDoor garageDoor = new GarageDoor("");
 		Stereo stereo = new Stereo("Living Room");
 
-		
+		/*
 		//set the remote control's cmds using lamda expressions; the lambdas get passed as commands to setCommand().
 		remote.setCommand(0, () -> { livingRoomLight.on(); }, () -> { livingRoomLight.off(); });
 		remote.setCommand(1, () -> { kitchenLight.on(); }, () -> { kitchenLight.off(); });
 		remote.setCommand(2, () -> { ceilingFan.fanOnHigh(); }, () -> { ceilingFan.fanOff(); });
 		remote.setCommand(3, () -> { garageDoor.doorOpen(); }, () -> {garageDoor.doorClose(); });
 		remote.setCommand(4, () -> { stereo.on(); stereo.setCD(); stereo.setVolume(11); }, () -> { stereo.off(); });
-		
+		*/		
+
+		/* Simplify the [above] code more using method references. 
+		When the lambda expression you're passing calls just one method, you can pass a method reference in place of the lambda expression: */
+		remote.setCommand(0, livingRoomLight::on, livingRoomLight::off);
+		remote.setCommand(1, kitchenLight::on, kitchenLight::off);
+		remote.setCommand(2, ceilingFan::fanOnHigh, ceilingFan::fanOff);
+		remote.setCommand(3, garageDoor::doorOpen, garageDoor::doorClose);
+		Command stereoOnWithCD = () -> { stereo.on(); stereo.setCD(); stereo.setVolume(11); };
+		remote.setCommand(4,  stereoOnWithCD, stereo::off);
 
 		System.out.println(remote); //calls toString() to print each remote slot and the command that is assigned to it.
 
