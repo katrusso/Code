@@ -2,11 +2,17 @@ public class RemoteControl {
 	Command[] onCommands;	//the remote is going to handle 7 on/off commands which we'll hold in the corresponding arrays.
 	Command[] offCommands;
 
+	//String[] onCommandNames;
+	//String[]offCommandNames;
+
 	private static final int NUMBER_OF_REMOTE_SLOTS = 7;
 
 	public RemoteControl() {
 		onCommands = new Command[NUMBER_OF_REMOTE_SLOTS];
 		offCommands = new Command[NUMBER_OF_REMOTE_SLOTS];
+		//onCommandNames = new String[NUMBER_OF_REMOTE_SLOTS]; //if using lambda expressions, name remote control slots by updating setCommand() to take a name parameter, and update toString() to print the name
+		//offCommandNames = new String[NUMBER_OF_REMOTE_SLOTS];
+
 
 		/* Command noCommand = new NoCommand(); 
 		for(int i = 0; i < NUMBER_OF_REMOTE_SLOTS; i++) {
@@ -44,6 +50,16 @@ public class RemoteControl {
 		return stringBuff.toString();
 	}
 }
+
+/*
+	NOTE: (IF USING LAMBDA EXPRESSIONS)
+	
+	In the toString() method, .getClass() is used to get the class of the Command object, and then .getName() to get the name of the class. 
+	If you use lambda expressions, this method outputs weirdness because they don't have nice class names (their names are assigned internally
+	 by the java runtime).
+
+	 To fix the code, update setCommand() to include a parameter for the name of the slot, and modify toString() to use this name. 
+*/
 
 /*
 	The NoCommand object is an example of a null object. 

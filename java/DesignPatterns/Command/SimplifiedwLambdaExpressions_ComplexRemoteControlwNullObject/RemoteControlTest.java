@@ -57,3 +57,33 @@ public class RemoteControlTest {
 		remote.offButtonWasPushed(STEREO);		
 	}
 }
+
+/*
+	A lambda expression can have parameters and a return value.
+	
+	The signature of the lambda expression must match the signature of the one method in 
+	the type of object you're using a lambda expression to stand for.
+
+	If an interface has two methods, we can't use a lambda expression. 
+	An interface that has one method is known as a functional interface. Lambda expressions are 
+	designed specifically to replace the methods in these functional interfaces, partly as a way to 
+	reduce the code that is required when you have a lot of these small classes with functional interfaces.
+
+	If your interface has two methods, it's not a functional interface and you won't be able to replace it 
+	with a lambda expression: a lambda expression is really a replacement for a method, not an entire object.
+	You can't replace two methods with one lambda expression.
+
+	For example, that means you can't use lambda expression in code that uses the Command pattern to implement UNDO functionality.
+	e.g. 
+	  public interface Command {
+			public void execute() {};
+			public void undo() {};
+	  } 
+
+	  but since this app doesn't use undo, the interface looks like this:
+
+	  public interface Command {
+			public void execute() {};
+	  } 
+
+*/
