@@ -8,10 +8,17 @@ public class RemoteControl {
 		onCommands = new Command[NUMBER_OF_REMOTE_SLOTS];
 		offCommands = new Command[NUMBER_OF_REMOTE_SLOTS];
 
-		Command noCommand = new NoCommand(); //I'm unclear why first term isn't "NoCommand"; Why does it matter? NoCommand implements Command.
+		/* Command noCommand = new NoCommand(); 
 		for(int i = 0; i < NUMBER_OF_REMOTE_SLOTS; i++) {
 			onCommands[i] = noCommand; 
 			offCommands[i] = noCommand;
+		}*/
+
+		//option #2: remove the code the create a NoCommand object (above)
+		//instead of a NoCommand object, use a lambda expression that does nothing, just like execute() of the NoCommand object did nothing.
+		for(int i = 0; i < NUMBER_OF_REMOTE_SLOTS; i++) {
+			onCommands[i] = () -> { }; 
+			offCommands[i] = () -> { }; 
 		}
 	}
 
