@@ -17,8 +17,8 @@ int main()
 {
 	struct Owner kat;
 	kat.petsName = "Tanny!";
-	kat.address = "Albany, NY";
-	kat.phone = "5183222929";
+	kat.address = "NY";
+	kat.phone = "5185555555";
 
 
 	printf( "\n\n Pet's Name: %s\n Address: %s\n Phone#: (%.*s) %.*s - %.*s\n\n", kat.petsName, kat.address, 3, kat.phone, 3, kat.phone + 3, 4, kat.phone + 6);
