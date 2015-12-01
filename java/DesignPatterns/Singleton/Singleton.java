@@ -127,4 +127,20 @@ public class Singleton {
 		return uniqueInstance;
 	}
 */
+//===========================================================================================================================================//
+//QUESTIONS
+
+/*
+	When do I use Singleton?
+	Whenever you need to control the number of instances you are creating.
+
+	Can I just create a class in which all methods and vars are defined as static? Wouldn't that be the same as Singleton?
+	Yes, if you class is self-contained and doesn't depend on complex initialization. However, bc of the way static 
+	initializations are handled in Java, this can get messy, esp. if multipe classes are involved (e.g. hard-to-find bugs involving the 
+	order of initialization). Unless there is a compelling need to implement this way, don't.
+
+	What about class loaders? Is there a chance two class loaders could each end up with their own instance of Singleton?
+	Yes, each class loader defined a namespace. If you have 2+ loaders, you can load the same class multiple times (one for each loader).
+	If the class is Singleton, this can cause multiple instances of it. One way around this problem is to specify the classloader yourself. 
+*/
 
