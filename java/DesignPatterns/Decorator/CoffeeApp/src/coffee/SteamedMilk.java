@@ -1,22 +1,24 @@
-public class Mocha extends CondimentDecorator {
+package coffee;
+
+public class SteamedMilk extends CondimentDecorator {
 	Beverage beverage;
 
-	public Mocha(Beverage beverage) {
+	public SteamedMilk(Beverage beverage) {
 		this.beverage = beverage;
 	}
 
 	public String getDescription() {
-		return beverage.getDescription() + ", Mocha";
+		return beverage.getDescription() + ", Steamed Milk";
 	}
 
 	public double cost() {
 		double cost = beverage.cost();
 		if( beverage.getSize() == Size.TALL) {
-			cost += .20;
+			cost += .10;
 		} else if( beverage.getSize() == Size.GRANDE) {
-			cost += .25;
+			cost += .15;
 		}else if( beverage.getSize() == Size.VENTI) {
-			cost += .30;
+			cost += .20;
 		} 
 		return cost;
 	}

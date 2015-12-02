@@ -1,3 +1,5 @@
+package coffee;
+
 public class Whip extends CondimentDecorator {
 	Beverage beverage;
 

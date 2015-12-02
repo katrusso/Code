@@ -1,3 +1,5 @@
+package coffee;
+
 public abstract class Beverage {
 	String description = "Unknown Beverage";
 

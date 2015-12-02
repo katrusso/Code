@@ -1,3 +1,5 @@
+package coffee;
+
 public class Soy extends CondimentDecorator {
 	Beverage beverage;
 
