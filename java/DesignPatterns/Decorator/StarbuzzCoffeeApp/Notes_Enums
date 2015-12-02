@@ -1,0 +1,74 @@
+ Enums are lists of constants. When you need a predefined list of values which do not represent some kind of numeric or textual data, you should use an enum. For instance, in a chess game you could represent the different types of pieces as an enum:
+
+enum ChessPiece {
+	PAWN, 
+	ROOK,
+	KNIGHT, 
+	BISHOP, 
+	QUEEN, 
+	KING;
+}
+
+You should always use enums when a variable (especially a method parameter) can only take one out of a small set of possible values. Examples would be things like type constants (contract status: “permanent”, “temp”, “apprentice”), or flags (“execute now”, “defer execution”).
+
+If you use enums instead of integers (or String codes), you increase compile-time checking and avoid errors from passing in invalid constants, and you document which values are legal to use.
+
+=========================
+ENUMS
+	An enum type is a special data type that enables for a variable to be a set of predefined constants. 
+	The variable must be equal to one of the values that have been predefined for it. 
+	Common examples include compass directions (values of NORTH, SOUTH, EAST, and WEST) and the days of the week.
+
+	e.g.
+	public enum Day {
+    		SUNDAY, MONDAY, TUESDAY, WEDNESDAY,
+    		THURSDAY, FRIDAY, SATURDAY 
+	}
+
+public class EnumTest {
+    Day day;
+   	 
+    public EnumTest(Day day) {
+        this.day = day;
+    		}
+    
+    public void tellItLikeItIs() {
+        switch (day) {
+            case MONDAY:
+                System.out.println("Mondays are bad.");
+                break;
+                    
+            case FRIDAY:
+                System.out.println("Fridays are better.");
+                break;
+                         
+            case SATURDAY: case SUNDAY:
+                System.out.println("Weekends are best.");
+                break;
+                        
+            default:
+                System.out.println("Midweek days are so-so.");
+                break;
+        }
+    }
+    
+    public static void main(String[] args) {
+        EnumTest firstDay = new EnumTest(Day.MONDAY);
+        firstDay.tellItLikeItIs();
+        EnumTest thirdDay = new EnumTest(Day.WEDNESDAY);
+        thirdDay.tellItLikeItIs();
+        EnumTest fifthDay = new EnumTest(Day.FRIDAY);
+        fifthDay.tellItLikeItIs();
+        EnumTest sixthDay = new EnumTest(Day.SATURDAY);
+        sixthDay.tellItLikeItIs();
+        EnumTest seventhDay = new EnumTest(Day.SUNDAY);
+        seventhDay.tellItLikeItIs();
+    }
+}
+
+OUTPUT::
+Mondays are bad.
+Midweek days are so-so.
+Fridays are better.
+Weekends are best.
+Weekends are best.
