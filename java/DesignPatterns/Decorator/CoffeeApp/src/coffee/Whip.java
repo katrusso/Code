@@ -1,5 +1,7 @@
 package coffee;
 
+import coffee.Beverage.Size;
+
 public class Whip extends CondimentDecorator {
 	Beverage beverage;
 
@@ -9,6 +11,10 @@ public class Whip extends CondimentDecorator {
 
 	public String getDescription() {
 		return beverage.getDescription() + ", Whipped Cream";
+	}
+	
+	public Size getSize() {
+		return this.beverage.getSize();
 	}
 
 	public double cost() {

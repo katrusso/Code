@@ -1,5 +1,7 @@
 package coffee;
 
+import coffee.Beverage.Size;
+
 public class Mocha extends CondimentDecorator {
 	Beverage beverage;
 
@@ -9,6 +11,10 @@ public class Mocha extends CondimentDecorator {
 
 	public String getDescription() {
 		return beverage.getDescription() + ", Mocha";
+	}
+	
+	public Size getSize() {
+		return this.beverage.getSize();
 	}
 
 	public double cost() {

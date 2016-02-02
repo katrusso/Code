@@ -1,5 +1,7 @@
 package coffee;
 
+import coffee.Beverage.Size;
+
 public class SteamedMilk extends CondimentDecorator {
 	Beverage beverage;
 
@@ -9,6 +11,10 @@ public class SteamedMilk extends CondimentDecorator {
 
 	public String getDescription() {
 		return beverage.getDescription() + ", Steamed Milk";
+	}
+	
+	public Size getSize() {
+		return this.beverage.getSize();
 	}
 
 	public double cost() {

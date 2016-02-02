@@ -11,6 +11,10 @@ public class Soy extends CondimentDecorator {
 		return beverage.getDescription() + ", Soy";
 	}
 
+	public Size getSize() {
+		return this.beverage.getSize();
+	}
+	
 	public double cost() {
 		double cost = beverage.cost();
 		if( beverage.getSize() == Size.TALL) {
