@@ -5,12 +5,7 @@
 # Difficulty: easy.
 
 def count_vowels(string)
-  vowels = {'a' => 0, 'e' => 0, 'i' => 0, 'o' => 0, 'u' => 0, 'count' => 0}
-	
-  string.each_char do |i|
-	vowels['count'] += 1 if vowels[i]
-  end
-  return vowels['count']
+  string.split("").keep_if {|i| i =~ /[aeiou]/}.count
 end
 
 
@@ -62,6 +57,19 @@ end
 
 
 
+#ALTERNATE SOLN
+---------------------------------
+def count_vowels(string)
+  vowels = {'a' => 0, 'e' => 0, 'i' => 0, 'o' => 0, 'u' => 0, 'count' => 0}
+	
+  string.each_char do |i|
+	vowels['count'] += 1 if vowels[i]
+  end
+  return vowels['count']
+end
+---------------------------------
+
+
 
 #ALTERNATE SOLN
 ---------------------------------
@@ -73,6 +81,26 @@ def count_vowels(string)
 		v_count += 1 if vowels[i]
 	end
 	return v_count
+end
+---------------------------------
+
+
+
+#ALTERNATE SOLN
+---------------------------------
+def count_vowels(string)
+  vowels = /[aeiou]/
+  string.split("").select{ |i| i =~ vowels}.count
+end
+---------------------------------
+
+
+
+#ALTERNATE SOLN
+---------------------------------
+def count_vowels(string)
+  vowels = 'aeiou'
+  string.split("").select {|i| vowels.include?(i)}.count
 end
 ---------------------------------
 =end
